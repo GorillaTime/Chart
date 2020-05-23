@@ -1,0 +1,30 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    title Document
+  body
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js")
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js")
+    script(type="text/javascript" src="https://github.com/nagix/chartjs-plugin-streaming/releases/download/v1.2.0/chartjs-plugin-streaming.js")
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.1.0/pusher.js")
+    canvas#myChart
+    script(type="text/javascript").
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+      datasets: [{
+      data: []
+      }, {
+      data: []
+      }]
+      },
+      options: {
+      scales: {
+      xAxes: [{
+      type: 'realtime'
+      }]
+      }
+      }
+      });
